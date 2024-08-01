@@ -1,0 +1,9 @@
+services:
+  jekyll:
+    image: jekyll/jekyll:4.2.2
+    # --livereload flag was removed from command because it produces an error at Sources and Network
+    command: sh -c 'bundle install && jekyll serve --watch --force_polling --trace'
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/srv/
